@@ -1,7 +1,7 @@
 # Employee CSV Node
 
 ### About
-Node application reads a CSV file of employees and returns information based on two queries.
+Node application that reads a CSV file of employees and returns information based on two queries.
 - Search by ID (required): outputs employee information based in their ID.
 - Search by field (optional): outputs the value of the input field.
 
