@@ -26,22 +26,29 @@ const query = args[1] || undefined
             return
         }
 
-        // look by id 
-        if(id && query === undefined){
-           let searchById = employeesObj.filter(employee => {
-               return employee.id == id
-           }) 
-           if(Object.entries(searchById).length === 0){
-               console.log('This employee doesn\'t exist')
-               return
+        let searchById = employeesObj.filter(employee => {
+            return employee.id == id
+        }) 
+        
+        if(Object.entries(searchById).length === 0){
+            console.log('This employee doesn\'t exist')
+            return
         }
-        console.log('Employee information: \n', searchById)
-        } 
-
+        
         if(query){
-            // function goes here! 
+            let obj = searchById[0]
+            if(obj.hasOwnProperty(query)){
+                console.log(obj[query])
+            } else {
+                console.log(`Input query doesn't exist! You can search the following keywords: 
+                ⋆ id 
+                ⋆ first_name
+                ⋆ last_name
+                ⋆ email
+                ⋆ ip_address
+               `)
+            }
+        } else {
+            console.log('Employee information: \n', searchById)
         }
- 
     }) 
-
-
